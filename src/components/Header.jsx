@@ -24,7 +24,6 @@ class Header extends React.Component {
 
   render() {
     const { user, isLoad } = this.state;
-    console.log(user);
 
     return (
       <header data-testid="header-component">

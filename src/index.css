@@ -17,3 +17,9 @@ code {
   display: flex;
   justify-content: center;
 }
+
+#headerID{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}

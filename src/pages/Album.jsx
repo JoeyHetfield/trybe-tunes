@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import getMusics from '../services/musicsAPI';
 import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
+import Loading from './Loading';
 
 class Album extends Component {
   constructor() {
@@ -13,6 +14,7 @@ class Album extends Component {
       nameArtist: '',
       album: '',
       image: '',
+      isLoad: false,
     };
   }
 
@@ -32,29 +34,34 @@ class Album extends Component {
   };
 
   render() {
-    const { music, nameArtist, album, image } = this.state;
-    console.log({ music });
+    const { music, nameArtist, album, image, isLoad } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
-        <h1 data-testid="artist-name">
-          { nameArtist }
-        </h1>
-        <h2 data-testid="album-name">
-          { album }
-        </h2>
-        <img src={ image } alt="capa do album" />
-        <div>
-          {music.slice(1).map((musica) => (
-            <div key={ musica.trackId }>
-              <MusicCard
-                trackName={ musica.trackName }
-                previewUrl={ musica.previewUrl }
-                trackId={ musica.trackId }
-              />
+        { isLoad ? <Loading /> : (
+          <div>
+            <h1 data-testid="artist-name">
+              { nameArtist }
+            </h1>
+            <h2 data-testid="album-name">
+              { album }
+            </h2>
+            <img src={ image } alt="capa do album" />
+            <div>
+              {music.slice(1).map((musica) => (
+                <div key={ musica.trackId }>
+                  <MusicCard
+                    trackName={ musica.trackName }
+                    previewUrl={ musica.previewUrl }
+                    trackId={ musica.trackId }
+                    musica={ musica }
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+
+          </div>
+        )}
       </div>
     );
   }

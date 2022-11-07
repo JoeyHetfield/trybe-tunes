@@ -40,6 +40,7 @@ class Login extends Component {
               Usuario:
               <input
                 type="text"
+                id="LoginInput"
                 value={ user }
                 name="inputName"
                 onChange={ this.handleChangeUser }
@@ -49,6 +50,7 @@ class Login extends Component {
             <button
               disabled={ isDisabled }
               type="button"
+              id="LoginButton"
               data-testid="login-submit-button"
               onClick={ this.handleCLick }
             >

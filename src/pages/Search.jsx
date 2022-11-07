@@ -45,22 +45,26 @@ class Search extends Component {
         <Header />
         {isLoad ? <Loading /> : (
           <form>
-            <input
-              type="text"
-              data-testid="search-artist-input"
-              placeholder="Nome do Artista"
-              value={ inputSearch }
-              onChange={ this.handleSearch }
-            />
-            <button
-              disabled={ isBtnDisabled }
-              type="button"
-              data-testid="search-artist-button"
-              onClick={ this.handleSearchButton }
-            >
-              Pesquisar
+            <div id="SearchDiv">
+              <input
+                type="text"
+                data-testid="search-artist-input"
+                placeholder="Nome do Artista"
+                value={ inputSearch }
+                id="searchInput"
+                onChange={ this.handleSearch }
+              />
+              <button
+                disabled={ isBtnDisabled }
+                type="button"
+                id="searchButton"
+                data-testid="search-artist-button"
+                onClick={ this.handleSearchButton }
+              >
+                Pesquisar
 
-            </button>
+              </button>
+            </div>
           </form>
         )}
         {searchedArtist.length === 0

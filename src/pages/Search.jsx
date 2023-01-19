@@ -75,10 +75,9 @@ class Search extends Component {
                 {' '}
                 { artistName }
               </p>
-              <ul>
+              <ul id="ListaMusicas">
                 {searchedArtist.map((album) => (
                   <li key={ album.collectionId }>
-                    <h1>{album.artistName}</h1>
                     <h2>{album.collectionName}</h2>
                     <img src={ album.artworkUrl100 } alt="Capa do album" />
                     <h3>

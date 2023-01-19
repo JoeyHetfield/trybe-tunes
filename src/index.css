@@ -35,20 +35,23 @@ code {
   position: absolute;
   width: 400px;
   height: 40px;
-  left: 440px;
+  left: 697px;
   top: 415px;
   border-radius: 100px;
+  font-size: 20px;
+  text-align: center;
 }
 
 #LoginButton{
   position: absolute;
   width: 400px;
   height: 40px;
-  left: 440px;
+  left: 700px;
   top: 464px;
   border-radius: 100px;
   background: #003BE5;
-  color: white;  
+  color: white; 
+  font-size: 20px;
 }
 
 #searchButton{
@@ -81,4 +84,38 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin: 10px;
+}
+
+#ListaMusicas{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  list-style-type: none;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+#ListaMusicas li{
+  width: 400px;
+  height: 300px;
+  align-self: center;
+  background-color: rgb(83, 92, 92);
+  color: white;
+  padding: 10px;
+  margin: 5px;
+}
+
+#ListaMusicas li h2{
+  background-color: rgb(34, 33, 33) ;
+}
+
+#ListaMusicas li a{
+  color: white;
+  text-decoration: none;
+}
+
+#ListaMusicas li a:hover{
+  color: #0f0f0f;
 }

@@ -12,7 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" component={ Login } />
+        <Route exact path="https://joeyhetfield.github.io/trybe-tunes/" component={ Login } />
         <Route exact path="/search" component={ Search } />
         <Route exact path="/album/:id" component={ Album } />
         <Route exact path="/favorites" component={ Favorites } />

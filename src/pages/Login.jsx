@@ -27,7 +27,7 @@ class Login extends Component {
     this.setState({ isLoad: true });
     await createUser({ name: user });
     this.setState({ isLoad: false });
-    history.push('/search');
+    history.push('/trybe-tunes/search');
   };
 
   render() {

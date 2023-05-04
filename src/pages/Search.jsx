@@ -86,7 +86,7 @@ class Search extends Component {
                       { album.trackCount }
                     </h3>
                     <Link
-                      to={ `/album/${album.collectionId}` }
+                      to={ `/trybe-tunes/album/${album.collectionId}` }
                       data-testid={ `link-to-album-${album.collectionId}` }
                     >
                       <p> Mais informações </p>

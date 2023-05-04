@@ -9,6 +9,10 @@ import ProfileEdit from './pages/ProfileEdit';
 import Search from './pages/Search';
 
 class App extends React.Component {
+  componentDidMount() {
+    console.log(this.params);
+  }
+
   render() {
     return (
       <Switch>

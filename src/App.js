@@ -22,7 +22,7 @@ class App extends React.Component {
         <Route path="/trybe-tunes/favorites" component={ Favorites } />
         <Route path="/trybe-tunes/profile/edit" component={ ProfileEdit } />
         <Route path="/trybe-tunes/profile" component={ Profile } />
-        <Route component={ NotFound } />
+        <Route exact path="/trybe-tunes" component={ NotFound } />
       </Switch>
     );
   }

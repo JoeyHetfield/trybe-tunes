@@ -1,15 +1,29 @@
-on: 
-  push: 
-    branches: 
-      - main
+name: GitHub Pages deploy
+
+on:
+  push:
+    branches: [main]
+
 jobs:
-  deployment:
+  build:
     runs-on: ubuntu-latest
+    environment: github-pages
+
     steps:
-      - name: Deploy
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
         with:
-          node-version: '16'
-      - run: npm install
-      - run: npm run deploy
+          node-version: '16.x'
+
+      - name: Installing my packages
+        run: npm ci
+
+      - name: Build my App
+        run: npm run build
+        
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        with:
+          BRANCH: main # The branch the action will deploy to
